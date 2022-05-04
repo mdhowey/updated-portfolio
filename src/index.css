@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Remove Scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Global Variables */
+:root {
+  /* Colors */
+  --color-bg: #ece8e5;
+  --color-dark: #3f3f3f;
+  --color-white: #ffffff;
+  --color-light: #fffbf7;
+  --color-primary: #ffb8d3;
+  --color-secondary: #6cb890;
+  --color-highlight: #942a15;
+
+  /* Transition */
+  --transition: all 0.3s ease-in-out;
+
+  /* Widths --> Media Queries*/
+  --container-width-lg: 75%;
+  --container-width-md: 86%;
+  --container-width-sm: 90%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Ubuntu Mono', monospace;
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+  line-height: 1.7;
+  background-image: url(./assests/profile-background3.jpg);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~ General ~~~~~~~~~~~~~~~~~~~~ */
+.container {
+  width: var(--container-width-lg);
+  /* Position in the middle */
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+section {
+  margin-top: 8rem;
+}
+
+section>h2,
+section>h5 {
+  text-align: center;
+  color: var(--color-highlight);
+}
+
+section>h2 {
+  color: var(--color-dark);
+  margin-bottom: 3rem;
+}
+
+.text-small {
+  color: black;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+a {
+  color: var(--color-highlight);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+.btn {
+  width: max-content;
+  display: inline-block;
+  color: var(--color-dark);
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 1px solid var(--color-secondary);
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--color-light);
+  color: var(--color-highlight);
+  border-color: transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ~~~~~~~~~~~~~ Media Query (Tablets) ~~~~~~~~~~~~~ */
+@media screen and (max-width: 1024px){
+  .container {
+    width: var(--container-width-md);
+  }
+
+  section {
+    margin-top: 6rem;
+  }
+}
+
+/* ~~~~~~~~~~~~~ Media Query (Mobile) ~~~~~~~~~~~~~ */
+@media screen and (max-width: 600px) {
+  .container {
+    width: var(--container-width-sm);
+  }
+
+  section > h2 {
+    margin-bottom: 2rem;
+  }
+}
